@@ -13,11 +13,14 @@ struct FruitListApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if isOnboarding {
-                OnboardingView()
-            } else {
-                ContentView()
+            ZStack {
+                if isOnboarding {
+                    OnboardingView()
+                } else {
+                    ContentView()
+                }
             }
+            .animation(.linear, value: isOnboarding)
         }
     }
 }

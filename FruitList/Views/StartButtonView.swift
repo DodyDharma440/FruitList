@@ -16,7 +16,9 @@ struct StartButtonView: View {
     
     var body: some View {
         Button {
-            isOnboarding = false
+            withAnimation(.linear(duration: 0.5)) {
+                isOnboarding = false
+            }
         } label: {
             HStack(spacing: 8) {
                 Text("Start")

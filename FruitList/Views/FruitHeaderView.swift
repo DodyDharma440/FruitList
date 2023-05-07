@@ -19,7 +19,6 @@ struct FruitHeaderView: View {
     var body: some View {
         ZStack {
             LinearGradient(colors: fruit.gradientColors, startPoint: .topLeading, endPoint: .bottomTrailing)
-                .frame(height: 440)
             
             Image(fruit.image)
                 .resizable()
@@ -28,6 +27,7 @@ struct FruitHeaderView: View {
                 .padding(.vertical, 20)
                 .scaleEffect(isAnimating ? 1 : 0.6)
         } // ZStack
+        .frame(height: 440)
         .onAppear(perform: {
             withAnimation(.easeOut(duration: 0.5)) {
                 isAnimating = true
